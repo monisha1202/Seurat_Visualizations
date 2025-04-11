@@ -10,4 +10,4 @@ seurat_obj <- readRDS("seurat_obj.RDS")
 gene_list <- c("gene1","gene2","gene3")
 
 #DotPlot
-VlnPlot(seurat_obj, features = gene_list) 
+VlnPlot(seurat_obj, features = gene_list) + stat_compare_means()
