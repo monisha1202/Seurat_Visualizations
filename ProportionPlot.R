@@ -30,3 +30,6 @@ prop_plot <- ggplot(ggData, aes(cluster, value, fill = library)) +
 
 #Print plot
 View(prop_plot)
+
+#Save figure
+ggsave(file="prop_plot.svg", plot=prop_plot, width=10, height=8) #custom size

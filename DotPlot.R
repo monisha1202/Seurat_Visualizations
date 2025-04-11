@@ -13,7 +13,7 @@ gene_list <- c("gene1","gene2","gene3")
 
 Idents(seurat_obj) <- "CellName"
 
-DotPlot(seurat_obj, features = gene_list, cluster.idents = F)+
+plot <- DotPlot(seurat_obj, features = gene_list, cluster.idents = F)+
   theme(axis.text.x=element_text(angle = -45, hjust = 0))+
   theme(text = element_text(size=10,face="bold"))+
   guides(colour = guide_colorbar(order=1, ticks.colour = NA, barheight = 1, barwidth = 6,
@@ -31,3 +31,9 @@ DotPlot(seurat_obj, features = gene_list, cluster.idents = F)+
         legend.position = "bottom",
         legend.box = "horizontal",
         legend.spacing.x = unit(0.1, 'points'), legend.justification = c("left")) + coord_flip()
+
+#View Plot
+View(plot)
+
+#Save figure
+ggsave(file="plot.svg", plot=plot, width=10, height=8) #custom size
